@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Timestamp Formatter</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body class="d-flex align-content-center justify-content-center">
+    <div>
+        <h1>Discord Timestamp Formatter</h1>
+        <label for="dateInput">Datum eingeben:</label>
+        <input type="datetime-local" id="dateInput">
+    </div>
+
+    <div>
+        <label for="formatOption">Format auswählen:</label>
+        <select class="form-control form-control-sm" id="formatOption">
+            <option value="Default">Default</option>
+            <option value="Short Time">Short Time</option>
+            <option value="Long Time">Long Time</option>
+            <option value="Short Date">Short Date</option>
+            <option value="Long Date">Long Date</option>
+            <option value="Short Date/Time">Short Date/Time</option>
+            <option value="Long Date/Time">Long Date/Time</option>
+            <option value="Relative Time">Relative Time</option>
+        </select>
+
+        <button type="button" class="btn btn-primary" onclick="generateTimestamp()">Generate Timestamp</button>
+    </div>
+
+    <div>
+        <p id="result"></p>
+        <button id="copyButton" style="display: none;" onclick="copyToClipboard()">Copy</button>
+    </div>
+
+    <div id="toast">Timestamp copied to clipboard!</div>
+</body>
+</html>
