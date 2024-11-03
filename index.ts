@@ -11,7 +11,7 @@ enum FormatOption {
 
 function formatTimestamp(dateString: string, format: FormatOption): string {
     let date = new Date(dateString);
-    let timestamp = Math.floor(date.getTime() / 1000); // Unix-Timestamp in Sekunden
+    let timestamp = Math.floor(date.getTime() / 1000);
 
     switch (format) {
         case FormatOption.Default:
@@ -43,6 +43,10 @@ function generateTimestamp(): void {
 
     if (dateInputElement && formatOptionElement && resultElement && copyButton) {
         let dateInput = dateInputElement.value;
+        if (!dateInput) {
+            showToast("Please enter a date.");
+            dateInput = new Date().toISOString();
+        }
         let formatOption = formatOptionElement.value as FormatOption;
         let result = formatTimestamp(dateInput, formatOption);
         resultElement.innerText = result;

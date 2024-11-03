@@ -12,7 +12,7 @@ var FormatOption;
 })(FormatOption || (FormatOption = {}));
 function formatTimestamp(dateString, format) {
     let date = new Date(dateString);
-    let timestamp = Math.floor(date.getTime() / 1000); // Unix-Timestamp in Sekunden
+    let timestamp = Math.floor(date.getTime() / 1000);
     switch (format) {
         case FormatOption.Default:
             return `<t:${timestamp}>`;
@@ -41,6 +41,10 @@ function generateTimestamp() {
     let copyButton = document.getElementById("copyButton");
     if (dateInputElement && formatOptionElement && resultElement && copyButton) {
         let dateInput = dateInputElement.value;
+        if (!dateInput) {
+            showToast("Please enter a date.");
+            dateInput = new Date().toISOString();
+        }
         let formatOption = formatOptionElement.value;
         let result = formatTimestamp(dateInput, formatOption);
         resultElement.innerText = result;

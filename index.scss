@@ -11,6 +11,26 @@ body {
   }
 }
 
+.border-content {
+  padding: 65px;
+}
+
+select.form-control option{
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}
+
+.btn-margin {
+  margin-top: 15px;
+}
+
+.result-style {
+  margin-top: 15px;
+}
+
 /* Toast msg */
 #toast {
   visibility: hidden;
