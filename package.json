@@ -1,0 +1,33 @@
+{
+  "name": "discordtimestampformatter",
+  "version": "1.0.0",
+  "description": "A time stamp formatter for Discord",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:ts": "tsc",
+    "build:scss": "sass src/styles:dist/styles",
+    "copy:html": "cpy index.html dist",
+    "build": "npm run clean && npm run build:ts && npm run build:scss && npm run copy:html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mori-Takahashi/DiscordTimestampFormatter.git"
+  },
+  "author": "Mori-Takahashi aka Lyonel Berzen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mori-Takahashi/DiscordTimestampFormatter/issues"
+  },
+  "homepage": "https://github.com/Mori-Takahashi/DiscordTimestampFormatter#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "cpy-cli": "^5.0.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.80.6",
+    "typescript": "^5.6.3"
+  }
+}
