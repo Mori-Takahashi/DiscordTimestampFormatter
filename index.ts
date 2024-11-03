@@ -150,3 +150,25 @@ function showPreview(): void {
         showToast("Ein erforderliches Element wurde nicht gefunden.");
     }
 }
+
+function showOptions() {
+    let element = document.getElementById("options");
+    if (element) {
+        element.classList.add("show-options");
+        element.classList.add("slide-in-left");
+        element.classList.remove("d-none");
+    }
+}
+
+function hideOptions() {
+    let element = document.getElementById("options");
+    if (element) {
+        element.classList.remove("slide-in-left");
+        element.classList.add("slide-out-left")
+        setTimeout(() => {
+            element.classList.add("d-none");
+            element.classList.remove("show-options");
+            element.classList.remove("slide-out-left");
+        }, 500);
+    }
+}
