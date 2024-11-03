@@ -9,7 +9,8 @@
     "build:scss": "sass src/styles:dist/styles",
     "copy:html": "cpy index.html dist",
     "build": "npm run clean && npm run build:ts && npm run build:scss && npm run copy:html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test2": "webpack"
   },
   "repository": {
     "type": "git",
