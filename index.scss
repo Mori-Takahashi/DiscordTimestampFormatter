@@ -13,6 +13,7 @@ body {
 
 .border-content {
   padding: 65px;
+  box-shadow: 0 0 20px rgba(50, 110, 100, 0.81);
 }
 
 select.form-control option{
@@ -33,7 +34,6 @@ select.form-control option{
 
 .show-options {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
   height: 100vh;
