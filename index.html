@@ -13,39 +13,56 @@
     <script src="index.js"></script>
 </head>
 <body class="d-flex align-items-center justify-content-center">
-<div class="align-items-center border border-primary rounded border-content">
-    <div class="d-flex flex-column text-center">
-        <h1>Discord Timestamp Formatter</h1>
-        <label for="dateInput">Enter date:</label>
-        <input type="datetime-local" id="dateInput">
+    <div class="align-items-center border border-primary rounded border-content">
+        <div class="d-flex flex-column text-center">
+            <h1>Discord Timestamp Formatter</h1>
+            <label for="dateInput">Enter date:</label>
+            <input type="datetime-local" id="dateInput">
+        </div>
+
+        <div class="d-flex align-items-center flex-column">
+            <label for="formatOption">Select format:</label>
+            <select class="form-control form-control-sm" id="formatOption">
+                <option value="Default">Default</option>
+                <option value="Short Time">Short Time</option>
+                <option value="Long Time">Long Time</option>
+                <option value="Short Date">Short Date</option>
+                <option value="Long Date">Long Date</option>
+                <option value="Short Date/Time">Short Date/Time</option>
+                <option value="Long Date/Time">Long Date/Time</option>
+                <option value="Relative Time">Relative Time</option>
+            </select>
+            <button type="button" class="btn btn-primary btn-margin" onclick="generateTimestamp()">Generate Timestamp</button>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center flex-column result-style">
+            <div>
+                <span>Preview:</span>
+                <div id="preview">
+
+                </div>
+            </div>
+            <p id="result"></p>
+            <button type="button" class="btn btn-secondary" id="copyButton" style="display: none;" onclick="copyToClipboard()">Copy</button>
+        </div>
+        <div class="d-flex align-items-center justify-content-center flex-column">
+            <p><a target="_blank" href="https://github.com/Mori-Takahashi/DiscordTimestampFormatter" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Github</a></p>
+            <button onclick="showOptions();" type="button" class="btn btn-danger">Report a bug</button>
+        </div>
     </div>
+        <div id="toast"></div>
+    <div id="options" class="position-absolute d-none">
+        <div class="card">
+            <div class="card-header d-flex justify-content-end">
+                <button onclick="hideOptions()" type="button" class="btn-close" aria-label="Close"></button>
+            </div>
 
-    <div class="d-flex align-items-center flex-column">
-        <label for="formatOption">Select format:</label>
-        <select class="form-control form-control-sm" id="formatOption">
-            <option value="Default">Default</option>
-            <option value="Short Time">Short Time</option>
-            <option value="Long Time">Long Time</option>
-            <option value="Short Date">Short Date</option>
-            <option value="Long Date">Long Date</option>
-            <option value="Short Date/Time">Short Date/Time</option>
-            <option value="Long Date/Time">Long Date/Time</option>
-            <option value="Relative Time">Relative Time</option>
-        </select>
-        <button type="button" class="btn btn-primary btn-margin" onclick="generateTimestamp()">Generate Timestamp</button>
-    </div>
-
-    <div class="d-flex align-items-center justify-content-center flex-column result-style">
-        <div>
-            <span>Preview:</span>
-            <div id="preview">
-
+            <div class="card-body">
+                <h5 class="card-title">You can report errors here</h5>
+                <a href="https://discord.com/channels/475637563911176194/972089865460121630" target="_blank" class="btn btn-primary">Discord</a>
+                <a href="https://github.com/Mori-Takahashi/DiscordTimestampFormatter/issues" target="_blank" class="btn btn-primary">GitHub</a>
             </div>
         </div>
-        <p id="result"></p>
-        <button type="button" class="btn btn-secondary" id="copyButton" style="display: none;" onclick="copyToClipboard()">Copy</button>
     </div>
-</div>
-    <div id="toast"></div>
 </body>
 </html>
